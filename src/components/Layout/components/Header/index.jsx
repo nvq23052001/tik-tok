@@ -8,6 +8,7 @@ import styles from './Header.module.scss';
 import images from '~/assets';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
@@ -16,7 +17,7 @@ function Header() {
 
   useEffect(() => {
     setTimeout(() => {
-      setSearchResult([1, 2]);
+      setSearchResult([]);
     }, 3000);
   }, []);
   return (
@@ -50,7 +51,10 @@ function Header() {
             </button>
           </div>
         </Tippy>
-        <div className={cx('actions')}></div>
+        <div className={cx('actions')}>
+          <Button text>Upload</Button>
+          <Button primary>Log In</Button>
+        </div>
       </div>
     </header>
   );
