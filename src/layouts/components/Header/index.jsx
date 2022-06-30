@@ -12,14 +12,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react';
 import classNames from 'classnames/bind';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
 
 import images from '~/assets';
 import Button from '~/components/Button';
 import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Menu from '~/components/Popper/Menu';
-import Search from '../Header/Search';
+import Search from './Search';
 import styles from './Header.module.scss';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 const currentUser = true;
@@ -30,6 +32,62 @@ const MENU_ITEMS = [
     children: {
       title: 'Language',
       data: [
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Việt Nam',
+        },
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Việt Nam',
+        },
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Việt Nam',
+        },
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Việt Nam',
+        },
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Việt Nam',
+        },
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Việt Nam',
+        },
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Việt Nam',
+        },
         {
           code: 'en',
           title: 'English',
@@ -86,7 +144,9 @@ function Header() {
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('logo')}>
-          <img src={images.logo} alt="" />
+          <Link to={config.routes.home} className={cx('logo-link')}>
+            <img src={images.logo} alt="" />
+          </Link>
         </div>
 
         {/* Search */}

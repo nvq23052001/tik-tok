@@ -41,6 +41,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
       interactive
       delay={[10, 700]}
       placement="bottom-end"
+      hideOnClick={false}
       render={(attrs) => (
         <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
           <PopperWrapper className={cx('menu-popper')}>
@@ -52,7 +53,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                 }}
               />
             ) : null}
-            {renderItems()}
+            <div className={cx('menu-body')}>{renderItems()}</div>
           </PopperWrapper>
         </div>
       )}
